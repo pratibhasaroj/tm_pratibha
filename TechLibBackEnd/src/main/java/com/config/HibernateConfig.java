@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.apache.catalina.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -42,11 +43,11 @@ public class HibernateConfig {
 	  }
 	   @Autowired
 	   @Bean(name="sessionFactory")
-	   public SessionFactory getSessionFactory(DataSource dataSource)
+	   public SessionFactory getSessionFactory1(DataSource dataSource)
 	   {
        System.out.println("------Hibernate properties creation------");
 		   Properties properties=new Properties();
-		   properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		   properties.put("hibernate.hbm2ddl.auto", "update");
 		   properties.put("hibernate.show_sql", "true");
 		   properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		   System.out.println("------Hibernate properties created------");
@@ -64,6 +65,28 @@ public class HibernateConfig {
 		   //return sessionBuilder.buildSessionFactory();
 	   }
 	   
+	
+	private Properties getHiberPro(){
+		System.out.println("------Hibernate properties creation------");
+		   Properties properties=new Properties();
+		   properties.put("hibernate.hbm2ddl.auto", "update");
+		   properties.put("hibernate.show_sql", "true");
+		   properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+		   System.out.println("------Hibernate properties created------");
+		   return properties;
+	}
+	
+	 @SuppressWarnings("deprecation")
+	 @Autowired
+	 @Bean(name="sessionFactory")
+	 public SessionFactory getSessionFactory(DataSource dataSource)
+	   {
+		 LocalSessionFactoryBuilder sessionBuilder=new LocalSessionFactoryBuilder(dataSource);
+		   sessionBuilder.addProperties(getHiberPro());
+		   System.out.println("------Factory Builder object created------");
+		   sessionBuilder.addAnnotatedClass(User.class);
+		   return sessionBuilder.buildSessionFactory();
+	   }
 	   @Autowired
 	   @Bean(name="supplierDaoImpl")
 	   

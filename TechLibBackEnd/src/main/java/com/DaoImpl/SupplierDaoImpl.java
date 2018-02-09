@@ -29,7 +29,7 @@ public class SupplierDaoImpl implements SupplierDao{
 	
 	@Transactional
 	public void insertSupplier(Supplier supplier) {
-		// TODO Auto-generated method stub
+		
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
 		session.saveOrUpdate(supplier);

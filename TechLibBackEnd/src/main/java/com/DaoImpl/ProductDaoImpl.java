@@ -28,7 +28,7 @@ public class ProductDaoImpl {
 	
 	@Transactional
 	public void insertProduct(Product product) {
-		// TODO Auto-generated method stub
+		
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
 		session.saveOrUpdate(product);

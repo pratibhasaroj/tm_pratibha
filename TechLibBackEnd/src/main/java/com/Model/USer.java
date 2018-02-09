@@ -3,8 +3,10 @@ package com.Model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class USer implements Serializable{
 
 	
@@ -23,10 +25,7 @@ public class USer implements Serializable{
 		  this.phone=phone;
 				  
 	  }
-	 public USer()
-	 {
-		 
-	 }
+	 
 	  public String getName() {
 	  return name;
 	  }

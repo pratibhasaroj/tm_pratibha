@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.Dao.CategoryDao;
 import com.Model.Category;
-import com.Model.Supplier;
 
 
 @Repository
@@ -29,7 +28,7 @@ public class CategoryDaoImpl implements CategoryDao{
 	
 	@Transactional
 	public void insertCategory(Category category) {
-		// TODO Auto-generated method stub
+		
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
 		session.saveOrUpdate(category);

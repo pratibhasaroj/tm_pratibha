@@ -1,4 +1,7 @@
 package com.DaoImpl;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -17,7 +20,20 @@ import com.Model.USer;
 public  class UserDaoImpl implements UserDao
 {
 	
-	
+	List<USer> users;
+
+	public UserDaoImpl(){
+		users = new ArrayList<USer>();
+	 USer user1 = new USer("prati","abc123","pqr@gmail.com","mumbai","9853356379");
+	  USer user2 = new USer("sonakshi","abc123","pqr@gmail.com","mumbai","9853356379");
+	  users.add(user1);
+	  users.add(user2);
+	}
+
+
+	public List<USer> getAllUsers() {
+			return users;
+	}
 	
 		@Autowired
 		SessionFactory sessionFactory;
@@ -30,7 +46,7 @@ public  class UserDaoImpl implements UserDao
 
 		@Transactional
 		public void insertUser(USer user) {
-			// TODO Auto-generated method stub
+			
 			Session session=sessionFactory.openSession();
 			session.beginTransaction();
 			session.saveOrUpdate(user);
@@ -38,11 +54,8 @@ public  class UserDaoImpl implements UserDao
 		}
 		
 	
-			/*// TODO Auto-generated method stub
-			Session session=sessionFactory.openSession();
-			session.beginTransaction();
-			session.saveOrUpdate(user);
-			session.getTransaction().commit();*/
+			
+			
 		}
 
 		
