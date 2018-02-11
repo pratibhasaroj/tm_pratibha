@@ -20,7 +20,7 @@ public String index(){
 	 
 	 
 	 @RequestMapping("/login")
-	/* public ModelAndView login(
+	 public ModelAndView login(
 			@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
 
@@ -37,10 +37,10 @@ public String index(){
 			return model;
 
 	 }
-	 */
+	/*
 	 public String login(){
 		 return "login";
-	 }
+	 }*/
 	 
 	 
 	 

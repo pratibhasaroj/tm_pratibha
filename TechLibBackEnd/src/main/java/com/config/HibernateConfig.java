@@ -6,7 +6,7 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
-import org.apache.catalina.User;
+//import org.apache.catalina.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -84,7 +84,7 @@ public class HibernateConfig {
 		 LocalSessionFactoryBuilder sessionBuilder=new LocalSessionFactoryBuilder(dataSource);
 		   sessionBuilder.addProperties(getHiberPro());
 		   System.out.println("------Factory Builder object created------");
-		   sessionBuilder.addAnnotatedClass(User.class);
+		   sessionBuilder.addAnnotatedClass(USer.class);
 		   return sessionBuilder.buildSessionFactory();
 	   }
 	   @Autowired

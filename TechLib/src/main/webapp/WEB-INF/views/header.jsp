@@ -26,27 +26,27 @@
         <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
        
-        <li><a href="D:\dtt\TechLib\src\main\webapp\WEB-INF\views\login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-              
-         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+        <li><a href="${contextRoot}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      
+         <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">AdminList
         <span class="caret"></span></a>
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="AdminAdding.jsp">Supplier</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="${contextRoot}/AdminAdding">Supplier</a></li>
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Product</a></li>
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Category</a></li>
-        </ul>
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+       </ul> </li>
+        <li>
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category
         <span class="caret"></span></a>
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
       <li role="presentation"><a role="menuitem" tabindex="-1" href="AdminAdding.jsp">Books</a></li>
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Magazines</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Audio & Video</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Audio and Video</a></li>
       
-    </ul>
-  
+    </ul></li>
+  </ul>
 </div>
-
+</div>
 </nav>
   
 </body>
